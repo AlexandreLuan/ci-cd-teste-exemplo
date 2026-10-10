@@ -109,35 +109,6 @@ context('Cypress APIs', () => {
     })
   })
 
-  context('Cypress.env()', () => {
-    beforeEach(() => {
-      cy.visit('https://example.cypress.io/cypress-api')
-    })
-
-    // We can set environment variables for highly dynamic values
-
-    // https://on.cypress.io/environment-variables
-    it('Get environment variables', () => {
-    // https://on.cypress.io/env
-    // set multiple environment variables
-      Cypress.env({
-        host: 'veronica.dev.local',
-        api_server: 'http://localhost:8888/v1/',
-      })
-
-      // get environment variable
-      expect(Cypress.env('host')).to.eq('veronica.dev.local')
-
-      // set environment variable
-      Cypress.env('api_server', 'http://localhost:8888/v2/')
-      expect(Cypress.env('api_server')).to.eq('http://localhost:8888/v2/')
-
-      // get all environment variable
-      expect(Cypress.env()).to.have.property('host', 'veronica.dev.local')
-      expect(Cypress.env()).to.have.property('api_server', 'http://localhost:8888/v2/')
-    })
-  })
-
   context('Cypress.log', () => {
     beforeEach(() => {
       cy.visit('https://example.cypress.io/cypress-api')

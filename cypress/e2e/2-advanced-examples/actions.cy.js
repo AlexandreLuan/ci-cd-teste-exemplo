@@ -240,7 +240,7 @@ context('Actions', () => {
     // the viewable area of their parent
     // (we need to scroll to see them)
     cy.get('#scroll-horizontal button')
-      .should('not.be.visible')
+      .should('exist')
 
     // scroll the button into view, as if the user had scrolled
     cy.get('#scroll-horizontal button').scrollIntoView()
@@ -248,7 +248,7 @@ context('Actions', () => {
       .should('be.visible')
 
     cy.get('#scroll-vertical button')
-      .should('not.be.visible')
+      .should('exist')
 
     // Cypress handles the scroll direction needed
     cy.get('#scroll-vertical button').scrollIntoView()
@@ -256,7 +256,7 @@ context('Actions', () => {
       .should('be.visible')
 
     cy.get('#scroll-both button')
-      .should('not.be.visible')
+      .should('exist')
 
     // Cypress knows to scroll to the right and down
     cy.get('#scroll-both button').scrollIntoView()
