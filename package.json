@@ -4,7 +4,7 @@
   "description": "Projeto simples para aulas de CI-CD",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --browser chrome",
+    "test": "npx cypress run --browser chrome --spec cypress/e2e/1-getting-started/todo.cy.js",
     "report": "npx allure serve --clean allure-results",
     "report:generate": "npx allure generate allure-results --clean allure-report --output allure-report"
   },
