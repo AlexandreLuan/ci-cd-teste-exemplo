@@ -14,16 +14,22 @@ pipeline {
         }
         stage('Execucao dos testes') {
             parallel {
-                stage('Testes no chrome') {
+                stage('Testes da suite 1') {
                     steps {
-                        echo 'Executando os testes no chrome...'
-                        bat 'npm run test-chrome'
+                        echo 'Executando os testes da suite 1...'
+                        bat 'npm run test-suite-1'
                     }
                 }
-                stage('Testes no electron') {
+                stage('Testes da suite 2') {
                     steps {
-                        echo 'Executando os testes no electron...'
-                        bat 'npx cypress run --browser electron'
+                        echo 'Executando os testes da suite 2...'
+                        bat 'npm run test-suite-2'
+                    }
+                }
+                stage('Testes da suite 3') {
+                    steps {
+                        echo 'Executando os testes da suite 3...'
+                        bat 'npm run test-suite-3'
                     }
                 }
             }
